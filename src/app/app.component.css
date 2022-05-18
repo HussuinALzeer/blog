@@ -1,0 +1,65 @@
+*{
+   margin: 0;
+   padding: 0;
+   overflow: hidden;
+   box-sizing: border-box;
+
+}
+
+
+
+mat-sidenav-container{
+   height: 100%;
+   position: relative;
+}
+
+mat-sidenav ,mat-sidenav-content {
+   padding: 16px;
+}
+
+mat-sidenav{
+   background-color: orangered;
+   width: 60%;
+}
+
+.but{
+   position: fixed;
+   margin-left: 80%;
+}
+
+
+mat-nav-list a{
+   color: white;
+   text-align: center;
+   align-items: center;
+   align-content:center;
+}
+span{
+   text-align: center;
+   align-items: center;
+   align-content:center;
+}
+
+mat-sidenav-content{
+   display: grid;
+   background: rgb(207, 205, 205);
+}
+router-outlet{
+   visibility: hidden;
+}
+
+app-post-list{
+   display: grid;
+   grid-template-columns: repeat(auto-fit,minmax(400px,1fr));
+}
+
+
+ng-star-inserted{
+   display: grid;
+   grid-template-columns: repeat(auto-fit,minmax(400px,1fr));
+}
+
+
+.box{
+   border: 1px solid black;
+}

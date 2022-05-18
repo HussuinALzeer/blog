@@ -1,0 +1,83 @@
+.main{
+position: relative;
+width: 100%;
+min-height: 100vh;
+display: flex;
+justify-content: center;
+align-items: center;
+}
+
+.main video{
+   position: absolute;
+   top: 0;
+   left: 0;
+   width:100%;
+   height: 100%;
+   object-fit: cover;
+   z-index: 2;
+   user-select: none;
+   mix-blend-mode: screen;
+}
+
+.mask{
+   position: absolute;
+   top: 0;
+   left: 0;
+   width:100%;
+   height: 100%;
+}
+
+.mask2{
+   filter: invert(1);
+   position: absolute;
+   top: 0;
+   left: 0;
+   width:100%;
+   height: 100%;
+}
+
+h2{
+   position: relative;
+   z-index: 3;
+   font-size: 16vw;
+   color: white;
+   text-shadow: 0 20px 30px rgba(0,0,0,0.2);
+}
+
+.sci{
+   position: absolute;
+   right: 100px;
+   bottom: 30px;
+   z-index: 4;
+   display: flex;
+   flex-direction: column;
+}
+
+.sci li{
+   list-style: none;
+}
+
+.sci li a{
+text-decoration: none;
+color: rgb(131, 131, 131);
+font-size: 1.75em;
+}
+
+mat-icon{
+   font-size: 1.75em;
+}
+.sci img{
+   width: 40px;
+   z-index: 4;
+}
+
+.ints{
+  
+}
+
+@media (max-width:768px) {
+   .sci{
+      right: 20px;
+      bottom: 20px;
+   }
+}

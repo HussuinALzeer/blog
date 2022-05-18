@@ -1,0 +1,57 @@
+
+<div class="box">
+<section class="main">
+   <video  id="myvideo" onloadedmetadata="this.muted=true" autoplay
+   loop
+   type="mp4">
+   <source src="video.mp4" type="video/mp4"> 
+</video>
+   <img src="mask.jpg" class="mask" alt="">
+   <h2>Ocean</h2>
+   
+   <ul class="sci">
+   <li><a href=""><mat-icon>facebook</mat-icon></a></li>
+   <li><a href=""><img src="instagram.png" class="ints" alt=""></a></li>
+   
+   </ul>
+   </section>
+</div>
+
+<section class="sec" >
+   <div class="" align="center" *ngFor="let posts of Post ">
+   <div class="card ">
+      <div class="imgBx" routerLink="{{posts.id}}">
+         <img src="{{posts.image}}" id="myimage"  alt="">
+      </div>
+   
+      <div class="content">
+         <div class="details">
+           <h2>{{posts.title}}</h2>
+           <div class="" align="center">
+              <h3>{{posts.categories}} </h3>
+           </div>
+            <div class="data">
+               <h3>Author : <span>{{posts.author}}</span></h3>
+               <h3>published : <span>{{posts.published}}</span></h3>
+            </div>
+
+            <div class="para">
+               {{posts.content}}
+            </div>
+   
+            <div class="actionBtn">
+               <button routerLink="{{posts.id}}">more </button>
+            </div>
+   
+         </div>
+      </div>
+   </div>
+   </div>
+</section>
+
+<video  id="myvideo" oncanplay="this.play()" onloadedmetadata="this.muted = true" loop>
+   <source src="video.mp4" type="video/mp4"> 
+</video>
+<div class="empty" style="width: 100%; height: 100px;"></div>
+
+

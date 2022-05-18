@@ -1,0 +1,87 @@
+
+<section fxLayout="row" fxLayout.xs="column" fxLayout.sm="column"> 
+   <div class="left" fxFlex="25%" fxFlex.sm="100%" fxFlex.xs="100%">
+      <div class="img">
+         <img src="../post-list/mask.jpg" alt="">
+      </div>
+   </div>
+
+   <div class="right"   fxFlex.xs="100%"  fxFlex="70%">
+      
+<ng-container *ngIf="post">
+
+<div class="" [hidden]="!editing" >
+
+   <mat-card>
+      <h2>updatePost</h2>
+   <mat-form-field>
+      <input matInput placeholder="Post title" [(ngModel)]="post.title" >
+   </mat-form-field>
+
+   <mat-form-field>
+      <input matInput placeholder="Author" [(ngModel)]="post.author" >
+   </mat-form-field>
+
+   <mat-form-field>
+      <input matInput placeholder="Pages" [(ngModel)]="post.pages" >
+   </mat-form-field>
+
+   <mat-form-field>
+      <input matInput placeholder="Published" [(ngModel)]="post.published" >
+   </mat-form-field>
+
+   <mat-form-field appearance="fill"  >
+      <mat-select formControlName="categories" multiple [(ngModel)]="post.categories">
+        <mat-label>select</mat-label>
+        <mat-option selected >-</mat-option>
+        <mat-option *ngFor="let option of foods" [value]="option">{{option}}</mat-option>
+      </mat-select>
+     </mat-form-field>
+
+   <br>
+   <mat-form-field>
+      <textarea matInput name="" id="" cols="30" rows="10" [(ngModel)]="post.content" ></textarea>
+   </mat-form-field>   
+   <br>
+   <mat-card-actions align="end">
+      <button mat-raised-button color="accent" (click)="updatePost()">Save</button>
+      <button mat-raised-button color="accent" (click)="editing=false">Cancel</button>
+   </mat-card-actions>  
+   
+   </mat-card>
+</div>
+
+<mat-card  [hidden]="editing" >
+   <div class="title" align="center">
+      <h1>{{post.title}}</h1>
+   </div>
+
+   <!-- <p>Posted by {{post.author}} &bull; {{post.published | date:'fullDate'}}</p> -->
+   <mat-card-content>
+      <div class="details">
+         <p>{{post.categories}}</p>
+         <P>Publisher :{{post.author}}</P>
+         <p>Pages : 300</p>
+         <p>published Date : {{post.published}}</p>
+      </div>
+      <hr>
+      <h2>Summary</h2>
+      <h3>{{post.content}}</h3> 
+
+   </mat-card-content>
+
+   <mat-card-actions  align="end" *ngIf="(Auth$ | async)">
+      <button mat-icon-button  (click)="edit()">
+         <mat-icon>edit</mat-icon>
+      </button>
+      <button mat-icon-button  (click)="delete()">
+         <mat-icon >delete</mat-icon>
+      </button>
+   </mat-card-actions>
+</mat-card>
+
+
+</ng-container>
+   </div>
+
+</section>

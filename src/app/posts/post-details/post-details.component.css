@@ -1,0 +1,45 @@
+mat-card{
+   margin-top: 20px;
+   width: 100%;
+
+   
+}
+
+img{
+   width: 100%;
+}
+
+mat-form-field{
+   width:100%;
+   
+}
+
+h3{
+   line-height: 25px;
+   letter-spacing: .1px;
+   font-weight: 400;
+   font-size: 1.3em;
+}
+
+
+
+section{
+   margin-top: 150px;
+   width: 100%;
+   z-index: 1000000;
+   justify-content: center;
+}
+
+section .right{
+}
+
+section .left{
+background: blue;
+
+
+}
+
+section .left .img{
+   height: 460px;
+   width: 100%;
+}

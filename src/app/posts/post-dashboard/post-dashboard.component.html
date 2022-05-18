@@ -1,0 +1,109 @@
+<div class="row " style="margin-top: 100px;">
+  <div class="col-md-8 offset-md-3">
+ 
+ <div class="card" style="max-width: 700px; width: 600px; ">
+    <div class="text-center" [hidden]="!downloadUrl">
+      <img [src]="imgSrc" height="300" width="350px" (click)="fileUploader.click()">
+    </div>
+    <div class="card-body">
+ 
+      <form  [formGroup]="createform"  algin="center center" >
+        
+        <div class="form-group" style="width: 100%;" [hidden]="" >
+          <input type="file" accept="image/*" #fileUploader class="form-control" name="file" id="file" (change)="uploadImage($event)"  formControlName="image"
+          
+          >
+        </div>
+        {{this.image}} empty
+        <progress max="100" [value]="(uploadProgress | async)"></progress>
+        <div class="result" *ngIf="downloadUrl | async; let uploadSrc">
+          <a [href]="uploadSrc">You just uploaded this file!</a>
+        </div>  
+
+        <div class="cat" >
+
+
+      <mat-form-field appearance="fill"  >
+        <mat-select formControlName="categories" multiple>
+          <mat-label>select</mat-label>
+          <mat-option selected >-</mat-option>
+          <mat-option *ngFor="let option of foods" [value]="option">{{option}}</mat-option>
+        </mat-select>
+       </mat-form-field>
+          <div class="action">
+            <div class="add" mat-raised-button color="primary" (click)="show()">
+              <mat-icon>add</mat-icon></div>
+          </div>
+      </div>
+
+       <mat-form-field appearance="fill">
+        <mat-label>title</mat-label>
+        <input matInput placeholder="" formControlName="title">
+      </mat-form-field>
+
+     
+
+      <mat-form-field appearance="fill">
+        <mat-label>Author</mat-label>
+        <input matInput placeholder="" formControlName="author">
+      </mat-form-field>
+
+      <div class="split">
+          <mat-form-field appearance="fill">
+            <mat-label>pages</mat-label>
+            <input matInput placeholder="" formControlName="pages">
+          </mat-form-field>
+
+
+          <mat-form-field appearance="fill">
+            <mat-label>published</mat-label>
+            <input matInput placeholder="" formControlName="published">
+          </mat-form-field>
+      </div>
+
+      
+       <mat-form-field appearance="fill">
+         <mat-label>content</mat-label>         
+         <textarea matInput cols="30" rows="10" placeholder="Post conten" formControlName="content"></textarea>
+       </mat-form-field>      
+        
+       <br>
+       <div class="" align="end">
+       <button mat-raised-button  color="accent" type="submit" (click)="onsubmit('post has been created','Undo')" >Create Post</button>
+      </div>
+       </form>
+  </div>
+</div>
+
+</div>
+</div>
+
+
+<div class="{{theClass}}"  >
+  <div class="background" (click)="show()"></div>
+  <div class="box" fxLayout="center center">
+    <div class="card-header" align="center">
+      <h1>add Catagory</h1>
+    </div>
+    <div class="card-content">
+        <form [formGroup]="catagoryform">
+          <p>
+            <mat-form-field class="field" appearance="fill">
+              <mat-label>Fill form field</mat-label>
+              <input matInput formControlName="AddCatagory">
+              <mat-hint>Hint</mat-hint>
+            </mat-form-field>
+          </p>
+        </form>
+    </div>
+    
+    <div class="card-action ">
+      
+      <button mat-raised-button color="primary" (click)="catagorySubmit()">add</button>
+      <button mat-raised-button color="primary" (click)="show()">cancel</button>
+    </div>
+  </div>
+</div>
+
+
+ 

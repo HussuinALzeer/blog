@@ -1,0 +1,44 @@
+.sec{
+   height: 100%;
+   width: 100%;
+}
+.form{
+   height: 100%;
+}
+
+.box{
+   background: #eee;
+   height: auto;
+   width: 400px;
+   border-radius: 25px;
+   box-shadow: 12px 12px 22px 1px rgba(0, 0, 255, .2);
+}
+mat-form-field {
+   width: 300px
+}
+
+.signin{
+   width: 240px;
+   height: 60px;
+   border-radius: 250px;
+   background: orangered;
+   border: none;
+   transition: .3s;
+   color: white;
+   font-size: 1.2rem;
+}
+
+.signin:hover{
+    background-color: rgb(255, 38, 0);  
+    width: 250px;
+   height: 65px;
+   font-size: 1.3rem;
+}
+
+.line{
+   height: 1.5px;
+   width: 70%;
+   border-radius: 50px;
+   background: orangered;
+
+}

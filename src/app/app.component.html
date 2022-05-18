@@ -1,0 +1,18 @@
+<app-nav></app-nav>
+
+
+<mat-sidenav-container>
+   <mat-sidenav #sidenav [(opened)]="opened">
+      <mat-nav-list>
+         <a fxLayoutAlgin="center center"  mat-list-item routerLink="/signup" 
+         (click)="sidenav.close()"
+         ><span>login</span></a>
+         <a mat-list-item routerLink="/login" (click)="sidenav.close()">signup</a>
+         <a mat-list-item routerLink="/signup" (click)="sidenav.close()">signup</a>
+      </mat-nav-list>
+   </mat-sidenav>
+   <mat-sidenav-content>
+      <router-outlet></router-outlet>
+   </mat-sidenav-content>
+</mat-sidenav-container>
+

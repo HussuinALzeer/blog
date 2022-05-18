@@ -1,0 +1,23 @@
+<section class="sec">
+   <form fxLayoutAlign="center center"  class="form" [formGroup]="signinForm">
+       <div class="box" fxLayout="column" fxLayoutAlign="center center">
+         
+         <mat-form-field appearance="fill" class="mt-3">
+            <mat-label>Your Email</mat-label>
+            <input matInput formControlName="email" minlength="4">
+            <mat-icon matSuffix>perm_identity</mat-icon>
+          </mat-form-field>
+
+          <mat-form-field appearance="fill">
+            <mat-label>Your Password</mat-label>
+            <input matInput formControlName="password"  mat-error>
+            <mat-icon matSuffix>lock</mat-icon>
+          </mat-form-field>
+         
+          <button class="signin mt-3" type="submit" (click)="submit()">  login</button>
+          <div class="mt-5">
+             <p>do you all ready have an Account! <a>Login in</a></p>
+          </div>
+        </div>  
+   </form>
+</section>
